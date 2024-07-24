@@ -15,7 +15,6 @@ import frc.robot.commands.MoveHood;
 import frc.robot.commands.MoveTurret;
 import frc.robot.commands.SpinFlywheelToSpeed;
 import frc.robot.commands.SpinIndexer;
-import frc.robot.commands.StopCommands.BaseStop;
 import frc.robot.commands.StopCommands.StopFlywheel;
 import frc.robot.commands.StopCommands.StopHood;
 import frc.robot.commands.StopCommands.StopIndexer;
@@ -55,7 +54,7 @@ public class RobotContainer {
   private final SpinFlywheelToSpeed spinFlywheelToSpeed = new SpinFlywheelToSpeed(flywheel);
   private final SpinIndexer spinIndexer = new SpinIndexer(indexer, KTurretMoveSpeed);
 
-  private final BaseStop baseStop = new BaseStop(base);
+  // private final BaseStop baseStop = new BaseStop(base);
   private final StopHood stopHood = new StopHood(hood);
   private final StopTurret stopTurret = new StopTurret(turret);
   private final StopFlywheel stopFlywheel = new StopFlywheel(flywheel);
@@ -68,11 +67,11 @@ public class RobotContainer {
       logitechBtnLT, logitechBtnRT; // Logitech Button
 
   public RobotContainer() {
-    base.setDefaultCommand(baseStop);
-    base.setDefaultCommand(stopHood);
-    base.setDefaultCommand(stopTurret);
-    base.setDefaultCommand(stopFlywheel);
-    base.setDefaultCommand(stopIndexer);
+    base.setDefaultCommand(driveWithJoysticks);
+    hood.setDefaultCommand(stopHood);
+    turret.setDefaultCommand(stopTurret);
+    flywheel.setDefaultCommand(stopFlywheel);
+    indexer.setDefaultCommand(stopIndexer);
 
     logitech = new Joystick(KLogitechPort);
 
