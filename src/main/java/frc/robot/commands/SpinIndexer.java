@@ -4,18 +4,18 @@
 
 package frc.robot.commands;
 
-import static frc.robot.Constants.KFlywheelSpeed;
-
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.AddressableLED;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.subsystems.Flywheel;
+import frc.robot.subsystems.Indexer;
 
-public class SpinFlywheelToSpeed extends Command {
-  private Flywheel flywheel;
-  /** Creates a new SpinFlywheelToSpeed. */
-  public SpinFlywheelToSpeed(Flywheel flywheel) {
-    this.flywheel = flywheel;
-    addRequirements(flywheel);
+public class SpinIndexer extends Command {
+  private Indexer indexer;
+  private double speed;
+  /** Creates a new SpinIndexer. */
+  public SpinIndexer(Indexer indexer, double speed) {
+    this.indexer = indexer;
+    this.speed = speed;
+    addRequirements(indexer);
   }
 
   // Called when the command is initially scheduled.
@@ -25,7 +25,7 @@ public class SpinFlywheelToSpeed extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    flywheel.slewLimitedFlywheelSpin(SmartDashboard.getNumber("Flywheel Speed", KFlywheelSpeed));
+    indexer.spinIndexer(speed);
   }
 
   // Called once the command ends or is interrupted.

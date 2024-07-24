@@ -4,6 +4,8 @@
 
 package frc.robot.subsystems;
 
+import static frc.robot.Constants.KHoodMotorID;
+
 import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.TalonSRXConfiguration;
@@ -14,7 +16,7 @@ public class Hood extends SubsystemBase {
   public final TalonSRX hoodMotor; 
 
   public Hood() {
-    hoodMotor = new TalonSRX(6); 
+    hoodMotor = new TalonSRX(KHoodMotorID); 
     hoodMotor.configAllSettings(new TalonSRXConfiguration());
   }
 

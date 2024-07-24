@@ -4,6 +4,8 @@
 
 package frc.robot.subsystems;
 
+import static frc.robot.Constants.KTurretMotorID;
+
 import com.ctre.phoenix6.configs.SoftwareLimitSwitchConfigs;
 import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import com.ctre.phoenix6.hardware.TalonFX;
@@ -19,6 +21,8 @@ public class Turret extends SubsystemBase {
 
   /** Creates a new Turret. */
   public Turret() {
+    turretMotor = new TalonFX(KTurretMotorID);
+
     turretMotor.setPosition(0);
     turretMotorConfig = new TalonFXConfiguration();
     limitsEnabled = true;

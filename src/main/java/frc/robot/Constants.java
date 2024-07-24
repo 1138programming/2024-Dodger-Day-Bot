@@ -13,7 +13,55 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-  public static class OperatorConstants {
-    public static final int kDriverControllerPort = 0;
+    public static final int KLogitechPort = 0;
+    // Deadzone
+    public static final double KDeadZone = 0.05;
+
+    // Joystick Axis IDs
+    public static final int KLeftXAxis = 0;
+    public static final int KLeftYAxis = 1;
+    public static final int KRightXAxis = 2;
+    public static final int KRightYAxis = 3;
+
+    // Joystick Axis IDs
+    public static final int KXboxLeftYAxis = 1;
+    public static final int KXboxRightYAxis = 5;
+    public static final int KXboxLeftXAxis = 0;
+    public static final int KXboxRightXAxis = 4;
+
+    // Logitech Button Constants
+    public static final int KLogitechButtonX = 1;
+    public static final int KLogitechButtonA = 2;
+    public static final int KLogitechButtonB = 3;
+    public static final int KLogitechButtonY = 4;
+    public static final int KLogitechLeftBumper = 5;
+    public static final int KLogitechRightBumper = 6;
+    public static final int KLogitechLeftTrigger = 7;
+    public static final int KLogitechRightTrigger = 8; 
+    
+    // Motor IDs 
+    public static final int KleftLeadID = 36;
+    public static final int KleftFollow1ID = 35;
+    public static final int KleftFollow2ID = 20;
+
+    public static final int KrightLeadID = 16;
+    public static final int KrightFollow1ID = 25;
+    public static final int KrightFollow2ID = 27;
+
+    public static final int KIndexerMotorID = 2;
+
+    public static final int KHoodMotorID = 6;
+
+    public static final int KflywheelLeadMotorID = 0;
+    public static final int KFlywheelFollwerMotorID = 1;
+
+    public static final int KTurretMotorID = 99; //Change Later
+
+    // Motor Speeds
+    public static final double KFlywheelSpeed = 0.75;
+    public static final double KHoodMoveSpeed = 0.1;
+    public static final double KTurretMoveSpeed = 0.3;
+    public static final double KIndexerSpeed = 0.4;
+    
   }
-}
+

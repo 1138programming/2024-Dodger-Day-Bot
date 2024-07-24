@@ -1,21 +1,19 @@
-package frc.robot.commands;
+package frc.robot.commands.StopCommands;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Turret;
 
-public class MoveTurret extends Command {
+public class StopTurret extends Command {
     private final Turret turret;
-    private final double speed;
 
-    public MoveTurret(Turret turret, double speed) {
+    public StopTurret(Turret turret) {
         this.turret = turret;
-        this.speed = speed;
         addRequirements(turret);
     }
 
     @Override
     public void initialize() {
-        turret.setSpeed(speed);
+        turret.setSpeed(0);
     }
 
     @Override

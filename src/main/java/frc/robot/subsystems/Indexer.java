@@ -4,14 +4,28 @@
 
 package frc.robot.subsystems;
 
+import static frc.robot.Constants.KIndexerMotorID;
+
+import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Indexer extends SubsystemBase {
-  /** Creates a new Indexer. */
-  public Indexer() {}
+  private TalonSRX indexer;
+
+  public Indexer() {
+    indexer = new TalonSRX(KIndexerMotorID);
+
+    indexer.setInverted(true);
+  }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+  }
+
+  public void spinIndexer(double speed) {
+    indexer.set(TalonSRXControlMode.PercentOutput, speed);
   }
 }

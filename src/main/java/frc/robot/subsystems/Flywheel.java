@@ -5,7 +5,10 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.math.filter.SlewRateLimiter;
-import edu.wpi.first.wpilibj2.command.SubsystemBase; 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+
+import static frc.robot.Constants.*;
 
 import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
@@ -14,27 +17,28 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 public class Flywheel extends SubsystemBase {
   private TalonSRX flywheelLead;
   private TalonSRX flywheelFollower;
-  private TalonSRX indexer;
 
   private SlewRateLimiter flywheelSlewRateLimiter;
 
   /** Creates a new Shooter. */
   public Flywheel() {
-    flywheelLead = new TalonSRX(0);
-    flywheelFollower = new TalonSRX(1);
-    indexer = new TalonSRX(2);
+    flywheelLead = new TalonSRX(KflywheelLeadMotorID);
+    flywheelFollower = new TalonSRX(KFlywheelFollwerMotorID);
 
     flywheelSlewRateLimiter = new SlewRateLimiter(0.2);
 
     flywheelLead.setInverted(true);
     flywheelFollower.follow(flywheelLead);
 
-    indexer.setInverted(true);
+    SmartDashboard.putNumber("Flywheel Speed", KFlywheelSpeed);
   }
 
   @Override
   public void periodic() {
-    // This method will be called once per scheduler run
+  }
+
+  public void StopFlywheel() {
+    flywheelLead.set(TalonSRXControlMode.PercentOutput, 0);
   }
 
   public void slewLimitedFlywheelSpin(double speed) {
@@ -49,8 +53,4 @@ public class Flywheel extends SubsystemBase {
     flywheelLead.set(TalonSRXControlMode.PercentOutput, speed);
   }
 
-  public void indexerSpeed(double speed) {
-    indexer.set(TalonSRXControlMode.PercentOutput, speed);
-  }
-  
 }
