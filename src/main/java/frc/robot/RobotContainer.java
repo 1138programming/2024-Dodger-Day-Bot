@@ -45,8 +45,7 @@ public class RobotContainer {
   private final Flywheel flywheel = new Flywheel();
 
   // Commands
-  private final DriveWithJoysticks driveWithJoysticks = new DriveWithJoysticks(base, getLogiLeftYAxis(),
-      getLogiRightYAxis());
+  private final DriveWithJoysticks driveWithJoysticks = new DriveWithJoysticks(base);
   private final MoveHood moveHoodUp = new MoveHood(hood, KHoodMoveSpeed);
   private final MoveHood moveHoodDown = new MoveHood(hood, -KHoodMoveSpeed);
   private final MoveTurret moveTurretRight = new MoveTurret(turret, KTurretMoveSpeed);

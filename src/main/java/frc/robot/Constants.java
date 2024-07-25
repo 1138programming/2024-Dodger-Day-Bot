@@ -39,23 +39,23 @@ public final class Constants {
     public static final int KLogitechLeftTrigger = 7;
     public static final int KLogitechRightTrigger = 8; 
     
-    // Motor IDs 
-    public static final int KleftLeadID = 36;
-    public static final int KleftFollow1ID = 35;
-    public static final int KleftFollow2ID = 20;
+    // Motor IDs - Make sure to double check 
+    public static final int KleftLeadID = 1;
+    public static final int KleftFollow1ID = 2;
+    public static final int KleftFollow2ID = 3;
 
-    public static final int KrightLeadID = 16;
-    public static final int KrightFollow1ID = 25;
-    public static final int KrightFollow2ID = 27;
+    public static final int KrightLeadID = 4;
+    public static final int KrightFollow1ID = 5;
+    public static final int KrightFollow2ID = 6;
 
-    public static final int KIndexerMotorID = 2;
+    public static final int KIndexerMotorID = 7;
 
-    public static final int KHoodMotorID = 6;
+    public static final int KHoodMotorID = 8;
 
-    public static final int KflywheelLeadMotorID = 0;
-    public static final int KFlywheelFollwerMotorID = 1;
+    public static final int KflywheelLeadMotorID = 9;
+    public static final int KFlywheelFollwerMotorID = 10;
 
-    public static final int KTurretMotorID = 15; 
+    public static final int KTurretMotorID = 11; 
 
     // Motor Speeds
     public static final double KFlywheelSpeed = 0.75;

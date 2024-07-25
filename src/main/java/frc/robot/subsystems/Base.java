@@ -40,9 +40,9 @@ public class Base extends SubsystemBase {
     rightFollow1.follow(rightLead);
     rightFollow2.follow(rightLead);
 
-    rightFollow1.setInverted(InvertType.FollowMaster);
-    rightFollow2.setInverted(InvertType.FollowMaster);
-    rightLead.setInverted(true);
+    leftFollow1.setInverted(InvertType.FollowMaster);
+    leftFollow2.setInverted(InvertType.FollowMaster);
+    leftLead.setInverted(true);
   }
 
   @Override

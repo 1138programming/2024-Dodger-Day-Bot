@@ -5,17 +5,14 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.Robot;
 import frc.robot.subsystems.Base;
 
 public class DriveWithJoysticks extends Command {
   private Base base;
-  private double left;
-  private double right;
 
-  public DriveWithJoysticks(Base base, double right, double left) {
+  public DriveWithJoysticks(Base base) {
     this.base = base;
-    this.left = left;
-    this.right = right;
     addRequirements(base);
     // Use addRequirements() here to declare subsystem dependencies.
   }
@@ -28,7 +25,8 @@ public class DriveWithJoysticks extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    base.drive(left, right);
+    base.drive(
+      Robot.m_robotContainer.getLogiLeftYAxis(), Robot.m_robotContainer.getLogiRightYAxis());
   }
 
   // Called once the command ends or is interrupted.
